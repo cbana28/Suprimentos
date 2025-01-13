@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:35px; word-wrap:break-word;">
+  <h3 class="mb-4 text-center">Dashboard</h3>
+</div>
+{{end}}
+
+<h2 style="text-align: center;">Estoque Atual</h2>
+
+<!-- Tabela centralizada -->
+<table style="width: 100%; text-align: center; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #ddd; padding: 8px;">Descrição do Item</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Local Estocado</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Quantidade Atual</th>
+            <th style="border: 1px solid #ddd; padding: 8px;">Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for item in estoque:}}
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">{{=item.ac_item.descricao_item}}</td>  <!-- Descrição do Item -->
+                <td style="border: 1px solid #ddd; padding: 8px;">{{=item.ac_estoque.local_estocado}}</td>  <!-- Local Estocado -->
+                <td style="border: 1px solid #ddd; padding: 8px;">{{=item.ac_estoque.quantidade_atual}}</td>  <!-- Quantidade Atual -->
+                <td style="border: 1px solid #ddd; padding: 8px;">{{='%.2f' % item.ac_estoque.valor_total}}</td>  <!-- Valor Total formatado com duas casas decimais -->
+            </tr>
+        {{pass}}
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:35px; word-wrap:break-word;">
+  <h3 class="mb-4 text-center">Cadastrar Movimentação de Itens</h3>
+</div>
+{{end}}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Formulário de Cadastro -->
+            {{=form}}
+        </div>
+    </div>
+  </div>
+  
+  <style>
+    /* Estilo para centralizar os rótulos e campos */
+    .form-group {
+        text-align: center;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        text-align: center;
+    }
+  </style>
+  

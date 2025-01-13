@@ -1,0 +1,34 @@
+{{extend 'layout.html'}}
+
+<h2>Lista de Movimentações de Estoque</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Usuário</th>
+            <th>Quantidade</th>
+            <th>Data da Movimentação</th>
+            <th>Local de Saída</th>
+            <th>Local de Chegada</th>
+            <th>Valor da Movimentação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for i, mov in enumerate(movimentacoes):}}
+            <tr>
+                <td>{{=mov.id}}</td>
+                <td>{{=mov.item_id}}</td>
+                <td>{{=mov.usuario_id}}</td>
+                <td>{{=mov.quantidade}}</td>
+                <td>{{=mov.data_movimentacao}}</td>
+                <td>{{=mov.local_saida}}</td>
+                <td>{{=mov.local_chegada}}</td>
+                <td>{{=mov.valor_movimentacao}}</td>
+                <td>{{=links_editar[i]}}</td>  <!-- Botão de editar -->
+            </tr>
+        {{pass}}
+    </tbody>
+</table>

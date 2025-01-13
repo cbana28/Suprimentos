@@ -1,0 +1,36 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:35px; word-wrap:break-word;">
+  <h3 class="mb-4 text-center">Listar Usuários</h3>
+</div>
+{{end}}
+
+<h2>Lista de Usuários Cadastrados</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Nível de Acesso</th>
+            <th>Login</th>
+            <th>Status</th>
+            <th>Centro de Custo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for i, usuario in enumerate(usuarios):}}
+            <tr>
+                <td>{{=usuario.id}}</td>
+                <td>{{=usuario.nome}}</td>
+                <td>{{=usuario.nivel_acesso}}</td>
+                <td>{{=usuario.login}}</td>
+                <td>{{=usuario.status}}</td>
+                <td>{{=usuario.centro_custo}}</td>
+                <td>{{=links_editar[i]}}</td>  <!-- Botão de editar -->
+            </tr>
+        {{pass}}
+    </tbody>
+</table>

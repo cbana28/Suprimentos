@@ -1,0 +1,39 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
+  <h3 class="mb-4 text-center">Menu ADM</h3>
+</div>
+{{end}}
+
+<div class="row">
+  <a href="{{=URL('cadastro_usuario')}}">Cadastrar Usuário</a>
+</div>
+
+<div class="row">
+  <a href="{{=URL('cadastro_item')}}">Cadastro Item</a>
+</div>
+
+<div class="row">
+  <a href="{{=URL('cadastro_movimentacao')}}">Cadastro Movimentação</a>
+</div>
+
+<div class="row">
+  <a href="{{=URL('lista_usuarios')}}">Lista de Usuarios</a>
+</div>
+
+<div class="row">
+  <a href="{{=URL('lista_itens')}}">Lista de Itens</a>
+</div>
+
+
+<div class="row">
+  <a href="{{=URL('listar_movimentacoes')}}">Lista de Movimentações</a>
+</div>
+
+
+<div class="row">
+  <a href="{{=URL('dashboard')}}">Estoque</a>
+</div>
+
+

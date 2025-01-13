@@ -1,0 +1,33 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:35px; word-wrap:break-word;">
+  <h3 class="mb-4 text-center">Lista de Itens</h3>
+</div>
+{{end}}
+<h2>Lista de Itens Cadastrados</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descrição do Item</th>
+            <th>Valor Unitário</th>
+            <th>Unidade de Medida</th>
+            <th>Parâmetros</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for i, item in enumerate(itens):}}
+            <tr>
+                <td>{{=item.id}}</td>
+                <td>{{=item.descricao_item}}</td>
+                <td>{{=item.valor_unitario}}</td>
+                <td>{{=item.unidade_medida}}</td>
+                <td>{{=item.parametros}}</td>
+                <td>{{=links_editar[i]}}</td>  <!-- Botão de editar -->
+            </tr>
+        {{pass}}
+    </tbody>
+</table>
